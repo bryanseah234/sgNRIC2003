@@ -1,6 +1,5 @@
 # NRIC03
 
-As seen on Instagram.
 Disclaimer: For educational purposes only.
 
 ## Procedure to replicate
@@ -16,7 +15,7 @@ But one thing that still puzzles me is how they label us... is it based on our b
 
 ## How did you do it
 
-I found out that the NRIC's checksum is publicly available for all on the web. Then, there was a lesson in my computing class which needed us to code a script to validate NRICs. It got me wondering if I could generate everyone's NRIC since there is a way to validate them. But I was told that validated NRICs and legitimate NRICs are different. Of course the government thought of this.\
+I found out that the NRIC's checksum is publicly available for all on the web. Then, there was a lesson in my computing class which needed us to code a script to validate NRICs. It got me wondering if I could generate everyone's NRIC since there is a way to validate them. But I was told that validated NRICs and legitimate NRICs are different. (Of course the government thought of this.)\
 </br>
 The NRICs I am able to generate does not mean it is tagged to an individual. The NRIC may simply be not in use by anyone. Not worrying about this set back, I went ahead to code a script that would return me all the NRICs in Singpaore.\
 </br>
@@ -27,3 +26,5 @@ I wanted to do more. Generating barcodes isn't a really big acheievement; anyone
 </br>
 I googled for a python module that would allow me to generate barcodes by user input. I found one called python-barcode and I used it to generate images containing the barcodes.
 Note to who ever who wants to replicate this, there are many types of variable length for barcodes. A quick reference to your own Singapore NRIC will reveal that the government uses Code 39 to encode NRICs.
+
+## Challenges faced
