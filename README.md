@@ -28,3 +28,5 @@ I googled for a python module that would allow me to generate barcodes by user i
 Note to who ever who wants to replicate this, there are many types of variable length for barcodes. A quick reference to your own Singapore NRIC will reveal that the government uses Code 39 to encode NRICs.
 
 ## Challenges faced
+
+There are many, many challenges I faced when doing this project. Contact me for more information.
