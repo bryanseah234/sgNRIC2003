@@ -1,6 +1,7 @@
 # NRIC03
 
-Disclaimer: For educational purposes only.
+Disclaimer: For educational purposes only.\
+Used as a proof of concept.
 
 ## Procedure to replicate
 1. Generate all the possible NRICs combinations using 01_generate nric2003.py
@@ -11,8 +12,7 @@ P.S. Outputs from steps 1 and 2 have been uploaded for convenience
 
 ## Why NRICs
 
-I have always been fascinated about how the government label us with 7 digits and 2 alphabets. Will they ever run out of letters? Will they change their system?
-But one thing that still puzzles me is how they label us... is it based on our birthdate? Or which hospital we were born from? I know the government will never reveal their secrets, but this got me to be more interested in the National Registration Identity Card System in Singapore.
+I have always been fascinated about how the government label us with 7 digits and 2 alphabets. But one thing that still puzzles me is how they label us... is it based on our birthdate? Or which hospital we were born from? I know the government will never reveal their secrets, but this got me to be more interested in the National Registration Identity Card System in Singapore. At first I wanted to find out the population size born each year, but realised the government publicise that information. So I moved on to proving how easily it is to generate someone else's NRIC, using Python.
 
 ## How did you do it
 
@@ -30,4 +30,5 @@ Note to who ever who wants to replicate this, there are many types of variable l
 
 ## Challenges faced
 
-There are many, many challenges I faced when doing this project. Contact me for more information.
+1. My own Reddit account got suspended. Yes, you heard it right. At first I didnt know what I was doing, and uploaded all the individual images onto a new subreddit I created. Little did I know that it would cause alot of commotion and many conspiracy theory subreddits started picking it up. Well, my subreddit got banned because someone reported it for 'leaking private credentials'. I my opinion, yes, NRICs are private information, or they are suppoed to be. But like what I demonstrated, anyone is able to generate them, in large amounts too. Hence it isn't as private as before, and may not necessarily be a good thing.
+2.
