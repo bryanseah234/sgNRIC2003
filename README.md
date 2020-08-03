@@ -1,6 +1,6 @@
 # NRIC03
 
-As seen on Telegram, Instagram, TikTok and Reddit.
+As seen on Instagram.
 Disclaimer: For educational purposes only.
 
 ## Procedure to replicate
