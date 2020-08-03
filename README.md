@@ -1,7 +1,7 @@
 # NRIC03
 
 As seen on Telegram, Instagram, TikTok and Reddit.
-** Disclaimer: For educational purposes only**
+Disclaimer: For educational purposes only.
 
 ## Procedure to replicate
 1. Generate all the possible NRICs combinations using 01_generate nric2003.py
