@@ -8,7 +8,7 @@ Used as a proof of concept.
 2. Validate the NRICs by checking their checksum (last alphabet) using 02_validate nric2003.py
 3. Generate the barcodes for each NRIC by iterating through the list of validated NRICs using 03_generate barcodes.py
 
-P.S. Outputs from steps 1 and 2 have been uploaded for convenience 
+P.S. Outputs from steps 1, 2 and 3 have been uploaded for convenience.
 
 ## Why NRICs
 
