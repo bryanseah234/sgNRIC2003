@@ -1,5 +1,7 @@
 # NRIC03
 
+![NRIC03](https://github.com/bryanseah234/nric2003/blob/master/nric2003.JPG)
+
 Disclaimer: For educational purposes only.\
 Used as a proof of concept.
 
