@@ -1,9 +1,9 @@
 # NRIC03 
 (Disclaimer: For educational purposes only. Used as a proof of concept.)
-
 <p align="center">
   <img src="https://github.com/bryanseah234/nric2003/blob/master/nric2003.JPG" />
 </p>
+
 ## Procedure to replicate
 1. Generate all the possible NRICs combinations using 01_generate nric2003.py
 2. Validate the NRICs by checking their checksum (last alphabet) using 02_validate nric2003.py
