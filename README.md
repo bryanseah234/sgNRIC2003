@@ -1,12 +1,9 @@
-# NRIC03
+# NRIC03 
+(Disclaimer: For educational purposes only. Used as a proof of concept.)
 
 <p align="center">
   <img src="https://github.com/bryanseah234/nric2003/blob/master/nric2003.JPG" />
 </p>
-<p align="center">
-  Disclaimer: For educational purposes only. Used as a proof of concept.
-</p>
-
 
 ## Procedure to replicate
 1. Generate all the possible NRICs combinations using 01_generate nric2003.py
