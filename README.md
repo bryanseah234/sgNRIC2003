@@ -1,17 +1,28 @@
 # NRIC03 
-(Disclaimer: For educational purposes only. Used as a proof of concept.)
+Disclaimer: For educational purposes only. Used as a proof of concept.
 <p align="center">
   <img src="https://github.com/bryanseah234/nric2003/blob/master/archive/nric2003.JPG" />
 </p>
 
 ## Requirements
-1. 
+Software
+1. [Python 3](https://www.python.org/ftp/python/3.8.5/python-3.8.5.exe)
+2. [Barcode Module](https://pypi.org/project/python-barcode/)
+
+Hardware
+1. Laptop / Desktop (running windows or mac)
+
+Non-tangibles
+1. Time (at least 24hours)
+2. Storage space (at least 3GB)
+3. Electricity (be prepared to leave your device running overnight)
+
 
 ## Procedure to replicate
 1. Generate all the possible NRICs combinations using 01_generate nric2003.py
 2. Validate the NRICs by checking their checksum (last alphabet) using 02_validate nric2003.py
-3. Generate the barcodes for each NRIC by iterating through the list of validated NRICs using 03_generate barcodes.py
-P.S. Outputs from steps 1, 2 and 3 have been uploaded for convenience.
+3. Generate the barcodes for each NRIC by iterating through the list of validated NRICs using 03_generate barcodes.py\
+(P.S. Outputs from steps 1, 2 and 3 have been uploaded for convenience)
 
 ## Why NRICs
 I have always been fascinated about how the government label us with 7 digits and 2 alphabets. But one thing that still puzzles me is how they label us... is it based on our birthdate? Or which hospital we were born from? I know the government will never reveal their secrets, but this got me to be more interested in the National Registration Identity Card System in Singapore. At first I wanted to find out the population size born each year, but realised the government publicise that information. So I moved on to proving how easily it is to generate someone else's NRIC, using Python.
