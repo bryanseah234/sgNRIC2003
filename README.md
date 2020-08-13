@@ -26,9 +26,9 @@ Step 3: Generate barcodes for each NRIC by iterating through the list of validat
 (P.S. Outputs from steps 1, 2 and 3 have been uploaded for convenience)
 
 ## Why NRICs
-I have always been fascinated about how the government label us with 7 digits and 2 alphabets. But one thing that still puzzles me is how they label us... is it based on our birthdate? Or which hospital we were born from? I know the Singapore government will never reveal their secrets, but this got me to be more interested in the National Registration Identity Card System.\
+I have always been fascinated about how the government label us with 7 digits and 2 alphabets. But one thing that still puzzles me is how they label us... is it based on our birthdate? Or which hospital we were born from? I know the Singapore government will never reveal their secrets, but this got me to be more interested in the National Registration Identity Card System.
 
-At first I wanted to find out the population size born each year, by trying to find the largest NRIC in a particular year (E.G. T0398765A will tell me that there are 98,765 babies born in year 2003, until I find a NRIC larger than that). But I realised this method is very inaccurate at estimating the population size, plus the government is already publicising this information on their website.\
+At first I wanted to find out the population size born each year, by trying to find the largest NRIC in a particular year (E.G. T0398765A will tell me that there are 98,765 babies born in year 2003, until I find a NRIC larger than that). But I realised this method is very inaccurate at estimating the population size, plus the government is already publicising this information on their website.
 
 Earlier this year I saw this headline: [Man arrested, suspected of redeeming more than 200 face masks from vending machines](https://www.channelnewsasia.com/news/singapore/covid-19-man-arrested-200-face-masks-vending-machines-12784984) which intrigued me. So I changed the aim of my project, and moved on to proving how easy it is to generate someone else's NRIC, using Python.
 
