@@ -19,8 +19,8 @@ Non-tangibles
 
 
 ## Procedure to replicate
-Step 1: Use code from 01_generate nric2003.py to generate all the possible NRICs combinations.\
-Step 2: Validate the NRICs by checking their checksum (last alphabet) using 02_validate nric2003.py\
+Step 1: Use code from 01_generate nric2003.py to generate all the possible NRICs combinations.
+Step 2: Validate the NRICs by checking their checksum (last alphabet) using 02_validate nric2003.py
 Step 3: Generate barcodes for each NRIC by iterating through the list of validated NRICs using 03_generate barcodes.py
 
 (P.S. Outputs from steps 1, 2 and 3 have been uploaded for convenience)
@@ -40,7 +40,7 @@ The NRICs I am able to generate does not mean it is tagged to an individual. The
 But hold on, all the NRICs? That would seem a little aggressive and excessive. Hence, I chose to only generate the ones in 2003.\
 The script I wrote is also able to generate NRICs from other years with some adjustments, if that is what you are into.\
 </br>
-I wanted to do more. Generating barcodes isn't a really big acheievement; anyone one with a basic python skills could do it. Hence, I challenged myself to generate the barcodes of these NRICs.\
+I wanted to do more. Generating NRICs isn't a really big acheievement; anyone one with a basic python skills could do it. Hence, I challenged myself to generate the barcodes of these NRICs.\
 </br>
 I googled for a python module that would allow me to generate barcodes by user input. I found one called python-barcode and I used it to generate images containing the barcodes.
 Note to who ever who wants to replicate this, there are many types of variable length for barcodes. A quick reference to your own Singapore NRIC will reveal that the government uses Code 39 to encode NRICs.
@@ -49,4 +49,4 @@ Note to who ever who wants to replicate this, there are many types of variable l
 1. My own Reddit account got suspended. At first I didnt know what I was doing, and uploaded all the individual images onto a new subreddit I created. Little did I know that it would cause alot of commotion and many conspiracy theory subreddits started picking it up. Well, my subreddit got banned because someone reported it for 'leaking private credentials'. I my opinion, yes, NRICs are private information, or they are suppoed to be. But like what I demonstrated, anyone is able to generate them, in large amounts too. Hence it isn't as private as before, and may not necessarily be a good thing.
 2. Trust. I feel that many people (like my friends and teachers) do not understand what I am trying to do, and taken the nature of such a topic I am working on for this project, people have strong views and opinions about what I do. i dont't disagree with them that these are sensitive data, and that if fallen into the wrong hands, the situation can turn ugly. But I still wanted to make it known and put this information out there, onto the web, for people to know and realise the loophole in our NRICs, and the importance of using other methods of verification on top of checking ICs.
 3. Data scrappers. I have been advised against posting the individual pictures online, to prevent data / image scrappers from picking it up. This is a valid concern, which admittedly, I did not think about. I have since complied the photos into short videos (around 30 seconds or so) using video editing software.
-4. How do I know the barcode works? Well, I tested my own NRIC barcode (which i generated using Python) to collect my free mask at one of the vending machines. And guess what? It worked. However, I STRONGLY SUGGEST AGAINST using Python generated barcodes for malicious intents. The Singapore Police will definitely be able to track you down.
+4. How do I know the barcode works? Well, I tested my own NRIC barcode (which i generated using Python) to collect my free mask at one of the vending machines. And guess what? It worked. However, I STRONGLY CONDEMN using Python generated barcodes for malicious intents. The Singapore Police will definitely be able to track you down.
