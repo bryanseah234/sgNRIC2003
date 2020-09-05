@@ -51,3 +51,6 @@ Note to who ever who wants to replicate this, there are many types of variable l
 3. Data scrappers. I have been advised against posting the individual pictures online, to prevent data / image scrappers from picking it up. This is a valid concern, which admittedly, I did not think about. I have since complied the photos into short videos (around 30 seconds or so) using video editing software.
 4. How do I know the barcode works? Well, I tested my own NRIC barcode (which i generated using Python) to collect my free mask at one of the vending machines. And guess what? It worked. However, I STRONGLY CONDEMN using Python generated barcodes for malicious intents. The Singapore Police will definitely be able to track you down.
 5. Someone feedbacked to me that the code and output I uploaded here is technically incorrect. I apologise. There has been a mistake on my part. Using the barcode module from python, there will be a checksum at the end of the input. Lets say I want to generate the barcode of "T0399999A". My current code now will include a checksum at the end, so it becomes "T0399999AX" where X can be any alphabet or number or symbol. In order to fix this, I need to ensure "[add checksum = False](https://pythonhosted.org/pyBarcode/codes.html#code-39)".
+
+## As seen on
+https://whatismybarcode.blogspot.com/2020/09/how-to-diy-your-own-nric-barcode-python.html
