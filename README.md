@@ -56,14 +56,14 @@ Note to who ever who wants to replicate this, there are many types of variable l
 https://whatismybarcode.blogspot.com/2020/09/how-to-diy-your-own-nric-barcode-python.html
 
 ## Frequently asked questions
-### What’s a NRIC/FIN number?/
-NRIC (National Registration Identity Card) is the identity document in use in Singapore. The NRIC number is a unique alpha-numeric serial number assigned to the document./
-/
-### What are NRIC/FIN numbers used for?/
-Many online voting, contests, giveaways, lucky draws, and account registrations on Singaporean websites require a NRIC number to participate. For example, game account registrations like AsiaSoft MapleStory, Audition; Online club memberships like NikonClub, ActiveSG, Shaw, Golden Village, etc. Do note that if you create an online account, you have to remember the NRIC number that you use, in case you need to reset the password or claim a prize./
-/
-### How is the number generated?/
-The number is randomly generated. However to make it valid, the random numbers are used to calculate the checksum (last character) using an algorithm described in the Wikipedia page./
+### What’s a NRIC/FIN number?
+NRIC (National Registration Identity Card) is the identity document in use in Singapore. The NRIC number is a unique alpha-numeric serial number assigned to the document.
 
-### Is this legal?/
+### What are NRIC/FIN numbers used for?
+Many online voting, contests, giveaways, lucky draws, and account registrations on Singaporean websites require a NRIC number to participate. For example, game account registrations like AsiaSoft MapleStory, Audition; Online club memberships like NikonClub, ActiveSG, Shaw, Golden Village, etc. Do note that if you create an online account, you have to remember the NRIC number that you use, in case you need to reset the password or claim a prize./
+
+### How is the number generated?
+The number is randomly generated. However to make it valid, the random numbers are used to calculate the checksum (last character) using an algorithm described in the Wikipedia page.
+
+### Is this legal?
 The generation of NRIC numbers itself is legal, as the algorithm is made public. This page serves to demonstrate that it is possible to do so. However, you should not use the NRIC numbers to impersonate anyone as it is an offence. By using this page to generate/copy NRIC/FIN numbers, you hereby agree to be responsible for your actions for use of the numbers, and waive all your rights to hold me liable to any problems arising from your actions.
