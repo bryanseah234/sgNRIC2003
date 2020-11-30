@@ -1,8 +1,13 @@
 # Singapore NRIC 2003
-Disclaimer: For educational purposes only. Used as a proof of concept.
+code to generate barcodes for 2003 babies' NRICs.
+
 <p align="center">
   <img src="https://github.com/bryanseah234/sgNRIC2003/blob/master/archive/nric2003.JPG" />
 </p>
+
+## Disclaimer
+1. USE AT OWN DISCRETION
+2. FOR EDUCATIONAL PURPOSES ONLY
 
 ## Requirements
 Software
