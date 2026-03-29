@@ -69,6 +69,9 @@ updates:
     schedule:
       interval: "daily"
       time: "15:00"
+    labels:
+      - "dependencies"
+      - "github-actions"
 
   # Go modules (go.mod file)
   - package-ecosystem: "gomod"
