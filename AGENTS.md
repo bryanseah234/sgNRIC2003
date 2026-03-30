@@ -64,13 +64,20 @@ This file defines how AI coding agents (Cursor, Antigravity, Claude Code, GitHub
 
 Skills are modular documentation files that teach agents specific patterns for each repository. They are located in `.github/skills/` folders.
 
-### Available Skills (ticketremaster-b)
+### Available Skills
 1. **flask-service**: REST endpoint patterns
 2. **database-models**: SQLAlchemy and migration conventions
 3. **grpc-service**: gRPC proto and stub management
 4. **orchestrator-flow**: Saga pattern and multi-step flows
 5. **qr-encryption**: QR generation and verification
 6. **error-handling**: Error response patterns
+7. **vercel-deployment**: Vercel configuration and edge function patterns
+8. **shell-scripting**: Bash, sh, and PowerShell best practices
+9. **ai-agent-interaction**: Guidelines for AI Coding Agents
+10. **git-best-practices**: Universal Git workflows, Conventional Commits, and branch management
+11. **clean-code-principles**: Language-agnostic principles for writing maintainable code
+12. **multi-agent-orchestration**: Delegating tasks to specialized sub-agents (Explorer, Oracle, Designer, Builder)
+13. **mcp-tool-integration**: Best practices for using Model Context Protocol (MCP) servers and external tools
 
 ### Skill Format
 Each skill file follows this structure:
@@ -99,6 +106,7 @@ Agent workflows are step-by-step instructions for common tasks. They are located
 ### Available Workflows
 - **start-backend.md**: How to start the ticketremaster-b backend stack
 - **system.md**: DejaVista system initialization
+- **standard-pr-process.md**: Standard process for creating, reviewing, and merging Pull Requests
 
 ### Workflow Format
 ```markdown
