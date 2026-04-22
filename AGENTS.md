@@ -62,83 +62,43 @@ This file defines how AI coding agents (Cursor, Antigravity, Claude Code, GitHub
 
 ## Skill System
 
-Skills are modular documentation files that teach agents specific patterns for each repository. They are located in `.github/skills/` folders.
+Skills 是由 `npx skills` 工具安装的 Agent Skills，用于向 Agent 传授特定模式的指令。在 sourcerepo 中以 project-level 方式安装，并同步到所有项目仓库。
 
-### Available Skills
-1. **flask-service**: REST endpoint patterns
-2. **database-models**: SQLAlchemy and migration conventions
-3. **grpc-service**: gRPC proto and stub management
-4. **orchestrator-flow**: Saga pattern and multi-step flows
-5. **qr-encryption**: QR generation and verification
-6. **error-handling**: Error response patterns
-7. **vercel-deployment**: Vercel configuration and edge function patterns
-8. **shell-scripting**: Bash, sh, and PowerShell best practices
-9. **ai-agent-interaction**: Guidelines for AI Coding Agents
-10. **git-best-practices**: Universal Git workflows, Conventional Commits, and branch management
-11. **clean-code-principles**: Language-agnostic principles for writing maintainable code
-12. **multi-agent-orchestration**: Delegating tasks to specialized sub-agents (Explorer, Oracle, Designer, Builder)
-13. **mcp-tool-integration**: Best practices for using Model Context Protocol (MCP) servers and external tools
+### 安装来源
 
-### Skill Format
-Each skill file follows this structure:
-```markdown
----
-name: skill-name
-description: Brief description of what this skill teaches
----
+Skills 通过 `npx skills add` 从公开仓库安装，支持 Claude Code、Cursor、Cline、Codex、GitHub Copilot、Gemini CLI 等多个 Agent。完整清单与命令参见仓库中的 [`docs/skills-manifest.md`](<kfile name="skills-manifest.md" path="docs/skills-manifest.md">docs/skills-manifest.md</kfile>)。
 
-# Skill Title
+### 项目级 Skills 目录
 
-## When to Use
-[Context for when this skill applies]
+- `.agents/skills/`：通用 project-level skills（适合 Cursor/Cline/Codex/GitHub Copilot/OpenCode 等广泛兼容）
+- `.claude/skills/`：Claude Code 专属项目级目录
 
-## Step-by-Step
-[Detailed instructions with code examples]
+### MCP 配置
 
-## References
-[Links to related documentation]
-```
-
-## Agent Workflows
-
-Agent workflows are step-by-step instructions for common tasks. They are located in `.agents/workflows/` folders.
-
-### Available Workflows
-- **start-backend.md**: How to start the ticketremaster-b backend stack
-- **system.md**: DejaVista system initialization
-- **standard-pr-process.md**: Standard process for creating, reviewing, and merging Pull Requests
-
-### Workflow Format
-```markdown
----
-description: Brief description of the workflow
----
-
-// workflow-command-or-tag
-
-## Steps
-1. [Step-by-step instructions]
-2. [Include verification steps]
-3. [Include troubleshooting if needed]
-```
+MCP（Model Context Protocol）配置模板与支持策略见 [`docs/mcp-support-matrix.md`](<kfile name="mcp-support-matrix.md" path="docs/mcp-support-matrix.md">docs/mcp-support-matrix.md</kfile>)。当前阶段以文档与模板传播为主，不承诺所有 IDE/Agent 自动读取同一文件。
 
 ## Syncing Strategy
 
 ### Source of Truth
-- **Primary**: `source-repo-code` repository for shared configurations (`agents.md`, `.github/skills/`, `.agents/workflows/`)
-- **Secondary**: Individual repository overrides
+- **Primary**: sourcerepo 仓库作为唯一真源（Skills、MCP、通用配置、仓库设置）
+- **Secondary**: 目标仓库保留仓库特定覆盖（需在 sync 后自行维护）
+
+### Sync Workflows
+- **Skills 同步**：[`sync-skills.yml`](<kfile name="sync-skills.yml" path=".github/workflows/sync-skills.yml">.github/workflows/sync-skills.yml</kfile>) 负责传播 `.agents/skills/`、`.claude/skills/` 和 `docs/skills-manifest.md`
+- **MCP 同步**：[`sync-mcp.yml`](<kfile name="sync-mcp.yml" path=".github/workflows/sync-mcp.yml">.github/workflows/sync-mcp.yml</kfile>) 负责传播 MCP 模板与支持文档
+- **仓库设置与通用配置**：[`sync-repo-settings.yml`](<kfile name="sync-repo-settings.yml" path=".github/workflows/sync-repo-settings.yml">.github/workflows/sync-repo-settings.yml</kfile>) 负责传播 GitHub Actions、Dependabot、labels、`AGENTS.md` 等
 
 ### Sync Process
-1. Changes to shared configurations should be made in `source-repo-code`
-2. Pushing to `main` in `source-repo-code` will trigger a GitHub Action to propagate changes to all repositories
-3. The sync workflow automatically updates all configuration files across the workspace
+1. 在 sourcerepo 中修改 Skills、MCP 或通用配置
+2. 推送到 `main` 分支自动触发相应 workflow
+3. workflow 会遍历所有非 archive/fork 仓库，复制变更并提交/开 PR
+4. 定时任务每日/每日执行，覆盖未来新仓库
 
 ### New Repository Setup
-When creating a new repository:
-1. Copy `.github/skills/` from `source-repo-code`
-2. Copy `.agents/workflows/` if applicable
-3. Add repository-specific overrides if needed
-4. Run sync verification
+当创建新仓库时：
+1. 将 sourcerepo 中的配置同步过去（由定时任务或手动触发完成）
+2. 如需仓库特定覆盖，同步后手动维护
+3. Skills 已通过同步自动到位，无需手动安装
 
 ## Maintenance
 
@@ -156,16 +116,16 @@ When creating a new repository:
 ## Troubleshooting
 
 ### Agent Not Following Conventions
-1. Check repository-specific overrides in this file
-2. Verify skill files are present and up-to-date
-3. Review recent changes to conventions
-4. Re-sync configurations from source
+1. 检查仓库特定覆盖在 AGENTS.md 中
+2. 验证 `.agents/skills/` 与 `.claude/skills/` 中的 skills 文件存在且最新
+3. 审阅近期约定变更
+4. 从源重新同步配置
 
 ### Sync Failures
-1. Run sync script with `--dry-run` flag
-2. Check for git conflicts in target repositories
-3. Verify file permissions
-4. Review sync logs for specific errors
+1. 使用相应 workflow 的 `workflow_dispatch` 手动触发以观察日志
+2. 检查目标仓库中的 git 冲突
+3. 验证文件权限
+4. 查看同步日志中的具体错误
 
 ## References
 
