@@ -1,0 +1,820 @@
+{
+  "version": 1,
+  "skills": {
+    "agent-browser": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "e2a17f651a934c79ff0de0304cdd7a9ad2baba8b0996e54801386360a8097b16"
+    },
+    "agent-md-refactor": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "11d1ffbb2d9f180d63dabfb0b6c63a4632b4c0e2e6be1660c7651cef0f3f1c07"
+    },
+    "agent-tools": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "318c6c818b424fb522de4b0434713b7f363d7a33317f2f3e2057b55d7433f067"
+    },
+    "agent-ui": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "e3dfd99e9ac5ab83ee4e841a5419224352a16cadc45f4f09202c499ce865515d"
+    },
+    "ai-automation-workflows": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "b09c11e0ff70daffdfc1df5058b2972f9ee831046f8cc413777e0d32f170786d"
+    },
+    "ai-avatar-video": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "5a21ea35ab910c741972646f1c5dad17b0d4d47adf32eb778a1be75a5afba045"
+    },
+    "ai-content-pipeline": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "3dd3f6733d3c6e3caf3b42ba7e709ba40db0b8faab8fe22e0dc7813effcfaf52"
+    },
+    "ai-image-generation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "f8d877eea404c258a064c62667b9a56aa3d98ab7ac30114eed66837046745761"
+    },
+    "ai-marketing-videos": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "7e367d6030d16cfe234a64d703f8dfe75e8a4df10baae9f888301e3f7b3fbc71"
+    },
+    "ai-music-generation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "90faad4dc1e76dd5178876137beb81c79bfe9e66a3bfb0d109f6b52fc3c34d6e"
+    },
+    "ai-podcast-creation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "d93b563ac9c1c1ef41b8dde67c59582646554de9c95d0e5e261f7dcada5af016"
+    },
+    "ai-product-photography": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "e938ffdb01c692afca0eb2810951d07dafe42fe9de869e7a13ee407d9a9e5c3c"
+    },
+    "ai-rag-pipeline": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "e6dba94c08de49836db9393a2e1a4420d1ad8efdfad07259d867b1cf23dc6ba9"
+    },
+    "ai-social-media-content": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "8b1928605814b934273c6be47146ea93777e8e811cc001e745e6ffa1f56e44b5"
+    },
+    "ai-video-generation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "252481c0dfac98ba3f295cabac881d5a703f0eb161d40e5a11585aadc356e94c"
+    },
+    "ai-voice-cloning": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "7747d3b31b249a69f76e3f39f610af957c77c475b353d32a4312ade8bf8d1d3d"
+    },
+    "algorithmic-art": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "987b24aa98171a0d3690420173b2cdb6eaafd57981ed716b5d50371affa82ea3"
+    },
+    "app-store-screenshots": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "40ab555a8d87eb751507a5d333acbfea639a405c7fea9713d1606cda5d041bfd"
+    },
+    "backend-to-frontend-handoff-docs": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "7c43829a6f1731fca5bd4f4341254016fff31b4130c3208b2e9f0dce2660283d"
+    },
+    "background-removal": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "1fecc9661e88242883e4eb5e84a547bc22dac4e44d5aa343b6ce7cf2e71c06bc"
+    },
+    "backprop": {
+      "source": "JuliusBrussee/cavekit",
+      "sourceType": "github",
+      "computedHash": "b2e4d6c53c4441b6f1ba52b3e3c513cb48d8c2026182045d902fd56908015f5e"
+    },
+    "book-cover-design": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "bd93b40aac718a7b45eec84c7b0376fa7e783b485e8a5fe53392c5dd8865659f"
+    },
+    "brand-guidelines": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "c82f0b24cdcc7e2693a963d30c810558b7bb89ed84508b2328228d21256ef865"
+    },
+    "build": {
+      "source": "JuliusBrussee/cavekit",
+      "sourceType": "github",
+      "computedHash": "ea39796ce8a33b3dbfefe240efdaf6a2ba44c5a7a264f9b02700ca5f45919248"
+    },
+    "building-inferencesh-apps": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "50be12614ceaf2bc4bff4e60abdbc8e8e8cd9c6f32317d631896586bcaa41ecd"
+    },
+    "c4-architecture": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "9192b5d6be529478a70d1a73f3d4ce83db12c2052c4e6df4accd445f21e906d4"
+    },
+    "canvas-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "4e8bbc31d3b159efdd32d31a63ba8cd5a44d84911e924c1f2c709c50cbcdd0ec"
+    },
+    "case-study-writing": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "881d71690925429f8651eadadb19ace233bec94e47c4bb190a3d06c58bef4f84"
+    },
+    "caveman": {
+      "source": "JuliusBrussee/cavekit",
+      "sourceType": "github",
+      "computedHash": "2201563d38dba043e56df1b5653efd7408d09499527bce5f4ccaa2093773cece"
+    },
+    "caveman-commit": {
+      "source": "JuliusBrussee/caveman",
+      "sourceType": "github",
+      "computedHash": "89fd592e14079fc99a3ccd4dfca5d609bac6a0252e4ec4e3939f1497e53c4cbe"
+    },
+    "caveman-compress": {
+      "source": "JuliusBrussee/caveman",
+      "sourceType": "github",
+      "computedHash": "4f3cad023d7153f247fa6d9fda7b39477ee9c0c08054b8740c9a9dd9ec26aed7"
+    },
+    "caveman-help": {
+      "source": "JuliusBrussee/caveman",
+      "sourceType": "github",
+      "computedHash": "3468ac41877d388fc19d902ed9d442cd36609bd9e8d16205c41b362f481ea731"
+    },
+    "caveman-review": {
+      "source": "JuliusBrussee/caveman",
+      "sourceType": "github",
+      "computedHash": "368a26f2b079ffe0d584f48006524f65cf997cb9369411aa8c6ead216dee22eb"
+    },
+    "character-design-sheet": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "f8f41160f38e1f1cbce4dfc3bbd5849b39a9f6f870d0950ea0a062ec653f943f"
+    },
+    "chat-ui": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "f28ca5f4c57a8c587305d8ac7f090f4f8dd1723b403e126a95677606a4dc9572"
+    },
+    "check": {
+      "source": "JuliusBrussee/cavekit",
+      "sourceType": "github",
+      "computedHash": "27c300e5f1e5914d97b2fc64de9e71e88f195d27bef61dd18beae129e2751fe0"
+    },
+    "claude-api": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "86e5bbb3b9005c180c58297b6009eef62a03a64160b61e99c0cade50f95fb397"
+    },
+    "codex": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "36d06fc81796999e18ca611c03ff7787c618a7ea744761093995962e147ccdf7"
+    },
+    "command-creator": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "0808dd1c7ddc68f07c072e090d1864decda125ce6dbdfc5122e6477eb1428fb8"
+    },
+    "commit-work": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "c9362cbf8d20af2fba1789a57c27e94cf063c0cbe659f40898d31d2afa3b1cb8"
+    },
+    "competitor-teardown": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "ef5d070b2e7266f854923ba18aae06778dc76eb8df45148e40c88a6efa6d8ebe"
+    },
+    "compress": {
+      "source": "JuliusBrussee/caveman",
+      "sourceType": "github",
+      "computedHash": "f71138e885d3e0df8c78b4814554ae146a1a6dbe76bafcc32e95f2ba6d4073c9"
+    },
+    "content-repurposing": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "1be8775119713d4fca479b50b9cae2076ba602e91628a956df6e7dfa63d659c6"
+    },
+    "conventional-commit": {
+      "source": "rlespinasse/agent-skills",
+      "sourceType": "github",
+      "computedHash": "e33788a9b4eb787c3d0dfb4f0c9dcf22dd65d9efd960e36bb6566fb5c642cc94"
+    },
+    "crafting-effective-readmes": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "cb11facecbb4a15f7ca6cfac2e740ac66798676c246c057879a71babb27c9a4f"
+    },
+    "customer-persona": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "d405bb6e0fc395e75c3a5c97ddb5f9d96572c8cd5b221e50af93b958d8fc95ee"
+    },
+    "daily-meeting-update": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "a01be54c92bdfd8aa40ce77e7ff168531fe43543319850b8dc5824fd568fc68d"
+    },
+    "data-visualization": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "b7b6d607390f38eb82eace9906f1950a5457ce19eb1a42476726cb6db99bab77"
+    },
+    "database-schema-designer": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "f23c909d45c6207e974dbce0db4c648de13d586abb37057cfec34d62f25bb526"
+    },
+    "datadog-cli": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "11b87a7b2610755693e0d21aa626c96ec536daa869c6f178ccfb170bfba404d6"
+    },
+    "dependency-updater": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "3fc648ed28dfce104c7749318489af2c388de99dde2d85c145a4e028d994db41"
+    },
+    "design-system-starter": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "e6df3b8d53a8333f44db1da91a10570488e46c3aea899476875aad894858a3b0"
+    },
+    "dialogue-audio": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "33485d70bff27ebf42617e8c55f15f1eb819654d4b0b4c38ae7aba1454e7d2cc"
+    },
+    "diataxis": {
+      "source": "rlespinasse/agent-skills",
+      "sourceType": "github",
+      "computedHash": "0f7c040102fbbb6158b99a5af17bd41d8abd30d3c09030173b150885351e7340"
+    },
+    "difficult-workplace-conversations": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "e37c79cdcb3569a3f2c2eb875d993c495c6313165036d75b9b2fa5f117d802b2"
+    },
+    "doc-coauthoring": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "62cd7744438ee2aecc986c520bb603988a78ff6aaaf70a471bf4584fe0b78dae"
+    },
+    "docx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "150be87ff7b18f273ad07da303adb1cf2ca21cc3e76db7a2cf0373405178a278"
+    },
+    "domain-name-brainstormer": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "d8cdaa1279f4447fdd766bed9a566346ff2e72db822b4b3695fe033701903af6"
+    },
+    "draw-io": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "f7318f5fd5207c3386eea323fe83398a6f126bb662b373e168566dc39470cb01"
+    },
+    "elevenlabs-dialogue": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "bd99307b273a7cfefc15d1d643bbe93f7cc55b757dc6510c85568da39e346023"
+    },
+    "elevenlabs-dubbing": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "fb53879fee15b2f005dac7136909dc07436ba1a7321ffdd6aa25794330791f03"
+    },
+    "elevenlabs-music": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "c517d11355ec8b9b5adbf408ee884f42651ad30c4bddeab11f228e7f91a74553"
+    },
+    "elevenlabs-sound-effects": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "d1b2e939cb9c9a79761a74268d9f2ead5550f0e9c7bc0b272d5f9573ab1f57f0"
+    },
+    "elevenlabs-stt": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "4f4c492a218bbf40a64d32df569406f67430d78c1a7c11c234256958aa15d942"
+    },
+    "elevenlabs-tts": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "e775324153417082d998a6da00470b9515ff6d0811e82f2e4bda1f08eafdfce6"
+    },
+    "elevenlabs-voice-changer": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "7388d710ac2295c6b3d188bd5758ccdbeeb20b259bacdd199c3becb533724385"
+    },
+    "elevenlabs-voice-isolator": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "dd9e5269855dd9be41e63a409ddf5b84c1682882dd8a5f69057c027723e61296"
+    },
+    "email-design": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "ba509c9ad0cad8dc9d9326b6b768374e1ecdf6f16e3405fe044f0f319774b486"
+    },
+    "excalidraw": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "f7d76efd72bebb97e2a398cd7fe2924927fcdab24d586bda2fcc867396b740c0"
+    },
+    "explainer-video-guide": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "ff7679e8718cb357f1a2cc4754b812ee92f9b77e5c9a86c500930bbfc497dfd7"
+    },
+    "feedback-mastery": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "29e2af48dc587059f389287ae51ba0ecd7b9c853223ddb9f679834edd91e5cae"
+    },
+    "flux-image": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "dd88021728f3a38c03357ddec90abaabd335bec3bd0ff026072b74894b6c3257"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "516bd2154eb843a8240e43d5b285229129853114ad7075a5e141e1c08e408c84"
+    },
+    "frontend-to-backend-requirements": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "8c887221cfcf9f4cf25a8acc72798e911e0ce1c952f99fe75ed5b2554b48ea40"
+    },
+    "game-changing-features": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "957248a5654c01fe82186b4b31199b0c618a9375c1d0024fd66568afbe12c48f"
+    },
+    "gemini": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "feed23504518537af26b18b25ea80ea1ceb6d06084b1deeb3784d63ed151e6b4"
+    },
+    "gepetto": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "76fa67fd2eac92fd8d4d22be2adaff981791f2009248b1813db9a8e0ab245dd8"
+    },
+    "google-veo": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "1bd9a1797baf2cdc9aae29762737ea123ce8792ab2fb6389ba5e6200bc0d57e1"
+    },
+    "humanizer": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "c948e831d5fdfbe2e1fbbba1ebf8ab410a8f077ba529ddd522fd9ae40e6cc653"
+    },
+    "image-to-video": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "9e2de5a9c821c8bd97fba1afb844269fd60ec2ce1525d05b2dd91dfed17dc57d"
+    },
+    "image-upscaling": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "23cdf36740bb16dfb611b0a9f36434ab7544a06b592b5fa15af7ecd07febe36c"
+    },
+    "infsh-cli": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "69a3321aefbe2eff28b7dfff7aad751c13aa5dab97258cae75f75b2e1ea8ca4e"
+    },
+    "internal-comms": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "cf3dba93fd569d7380505db211f89a467869c1a2ef301941148d06f33ed17332"
+    },
+    "javascript-sdk": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "0eca0253a51bace0b108c7d591b5f1836b103d413b25cc45359b33bb3bf7e00d"
+    },
+    "jira": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "8977d5956e0254ddef59889758353c28f919853ddb13c3b34be018a799154c4c"
+    },
+    "landing-page-design": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "d9194d6a3cd823ed41ebb3647294837aa8952106693b90aa5d7af0a019cce922"
+    },
+    "lesson-learned": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "58e2a4062f3f113177658ef822dfc52ca10997a41b71098a6ae809b8f5ab316c"
+    },
+    "linkedin-content": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "5774cb551b4b198982d2d5391ab41e7c23de3c36701154d1dcff97cdede2e774"
+    },
+    "llm-models": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "1113380f7dffd48ad579b7956f72ed98b5d8caa0ae845975598b2bf5a04f61bf"
+    },
+    "logo-design-guide": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "83a7ce9af8f6ba1bdc74d07d8404aca3b7fde4d106416eb12cd904a6bbe49166"
+    },
+    "marp-slide": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "73f1da9e6938b404525a6e33fb19033dcda3358a79d5b9aeecde73a13c049831"
+    },
+    "mcp-builder": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "6498a736a8dc5c645047c8a875b8ea7417e2ad97146f005200e50d20a9337ada"
+    },
+    "meme-factory": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "a746b66da0219bd23de2a91ed5a21d2e951b92a56d89dd0193866950e927589f"
+    },
+    "mermaid-diagrams": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "b6c206a3cab0333a1d3d3cf27114099d0d5f25eb07d86c8f12472b7aa7d59a4c"
+    },
+    "mui": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "363bda5252637c682d30907de02efe538abc42843d1d20624d1e5e35823e996c"
+    },
+    "naming-analyzer": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "0200d6f4b2edfe342c255c49f9c46b0937c079899f3c5255c2a624686777ca51"
+    },
+    "nano-banana": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "ce8caac8280a8ee2afaf11e2ab2b9bb765f5c6dd04c1db3d0b72e5e885bbb13c"
+    },
+    "nano-banana-2": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "53c218982b4e3773f7b829522eadf1c95a80182a8ed4e408a3f2f293745a015d"
+    },
+    "newsletter-curation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "f73a97e08f5162a3135b287269a0ba7e17abe4a0c75af479e730ba4c82f5192e"
+    },
+    "og-image-design": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "70435867ba4bd425858cb903ae122cd3f368c9bf1edffa205fd76c92c9bbd3f7"
+    },
+    "openapi-to-typescript": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "703ab2a30b2113c9c18bf7982905c0b0f711f7476128ce30aa086585476af277"
+    },
+    "p-image": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "8ee3ea84de76c86f928646ede60acc9c7cc4cef3fb5498320a9c871b3457719a"
+    },
+    "p-video": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "abbed33a8ee996b82ed0c803da9d205a713df17a3b9b2d91d9f15f70c05908c5"
+    },
+    "pdf": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "37226d4220d844377e6b2a386c51a011df4cd130855ff0b80bcc22f9c28abd57"
+    },
+    "perplexity": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "1d32fbce001646737afa8208adaae6e8b1b6c74bd85eae492a9b89901e8c1668"
+    },
+    "pin-github-actions": {
+      "source": "rlespinasse/agent-skills",
+      "sourceType": "github",
+      "computedHash": "828b9c6278159783c7ea0f2b539667c361fcecc222ba06ec113a78d037e16e7c"
+    },
+    "pitch-deck-visuals": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "856041bcf44f190107580ef3ea6114d3eeefa5cf5c8aaf5620458a04156206c0"
+    },
+    "plugin-forge": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "6b8eaac56d39fad5f79a2495b506edbebf46d23d9b596aafc2428566c8f76bd7"
+    },
+    "pptx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "2275e4d8dba1790d52f6619b3e2fed04edc948beef545a2ad18e4a1be644426d"
+    },
+    "press-release-writing": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "f68a91907738bbf0b9964ef3fa39b68cadc04567ed9797cd1c30186e04ca2f93"
+    },
+    "product-changelog": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "15fd41f2ab1b25253034534405c5855fb7021b73e3a845692cc147637be44f5c"
+    },
+    "product-hunt-launch": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "e9b61f72145cf4a8c967e926192a3922d3d5ef0b136a4ec1758c58eb4ee8613a"
+    },
+    "product-photography": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "eca125e7971807d271b4355bf9b802030738cbb1c9aa5f7bcaf9f19117b9db19"
+    },
+    "professional-communication": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "80bc71b76f37e46ae5628205c004a02c696d808ea63539ef7260c92222e1de98"
+    },
+    "prompt-engineering": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "652b9a9f7092c45d175310497d14958c6243286dc4140f14dd8fc824e8d93001"
+    },
+    "python-executor": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "ac87e82f7c23c0b7af9dd3c12f856c7e26aa175642c6a4a01aec4ac45e5bdb1c"
+    },
+    "python-sdk": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "2e4da48467872c95277ccd3cb982a0eb6f398e20751ecbd26f8e470cafb7183f"
+    },
+    "qa-test-planner": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "8ee0d30acc14528eff0cf0b953f5adb6185a8ed65a72a489ae9297ddfee000b0"
+    },
+    "qwen-image-2": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "ca9a612faaef6948a3dd7f6cfd12dd9a9cb97fb361413c2e338493c067614fe3"
+    },
+    "qwen-image-2-pro": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "13e79a35248162959b8849d3e421a88744a0c2025e7d4898b76a59436afb22d6"
+    },
+    "react-dev": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "da3caa5f2bfd7274fad3f08524ff3ad4f427978773c3e77e7b14e44aaac31d78"
+    },
+    "react-useeffect": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "1fdf524f8335afac6f44d3460d6d20e71db9c1d14643e4a31ea17d6463504447"
+    },
+    "reducing-entropy": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "9e43d852830ac1fac136bb6a961dc843be4b3c977157b44432eb599337270ac3"
+    },
+    "related-skill": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "71c58f94454524a14276ec633c96063986317b60af3ea3a7a64586a511ba1187"
+    },
+    "remotion-render": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "2900a0b408825bf60dd7fd684da3f1835b7fff290eff9f40034b80bafd4b0ffc"
+    },
+    "requirements-clarity": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "a23371d1cd5d8cfdd62af76ce0cd462095d35dfd612587ed30528b4a54105771"
+    },
+    "seo-content-brief": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "47d43ee62f2ce1927a3b4780f27f9baff91433c0000d3bd17762f26b55ebcf3a"
+    },
+    "session-handoff": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "6401b3a156f4f756bb6faf54a633b3d092aea822115ef26858a8a6ce60b58a8e"
+    },
+    "shadcn": {
+      "source": "shadcn/ui",
+      "sourceType": "github",
+      "computedHash": "03365c7543539f6e6689a754e65b3d8ea023ba9d6ea12a9b5550462bf060af8c"
+    },
+    "ship-learn-next": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "4df93407ee5223f5905178f134839dd0e100a5ddaba88c0e6a408dacb468d942"
+    },
+    "skill-creator": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "7e3c9cd74e9e2b4828527a857170e86310f2dab5ea8030a9043df2c7e6c88857"
+    },
+    "skill-judge": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "14aa05080e7bb08f1da33a32c6e65e41ae67375f09747ab0a3432e3ffbf8506a"
+    },
+    "slack-gif-creator": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "a36e1ceb3f07eb37bdc259f1bfb18e48cc0e809b2e1651cb2369286cd66b2107"
+    },
+    "social-media-carousel": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "26a2cbcc4194650b8f358423f216a29164be3a18fbae8279766caf154885079e"
+    },
+    "spec": {
+      "source": "JuliusBrussee/cavekit",
+      "sourceType": "github",
+      "computedHash": "83b71b1096d7eb42bffcb5515d044727201e2b81de0c78601f6f6149503a44ff"
+    },
+    "speech-to-text": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "86c4ac57f31915f80d7c15ad919abbff4f32da63c4c0206d559951f453011238"
+    },
+    "storyboard-creation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "f22d62ecd9c6a3638353b98df2acf7bdce7d2ccf2eba1f9fd295bd538cc74d66"
+    },
+    "supabase": {
+      "source": "supabase/agent-skills",
+      "sourceType": "github",
+      "computedHash": "3bc4f56943a13f4fe355742a4b3b30c56008e6d265ae71f19c592410b5f5a01f"
+    },
+    "supabase-postgres-best-practices": {
+      "source": "supabase/agent-skills",
+      "sourceType": "github",
+      "computedHash": "8e41c7417894e6f394614ee7ca3ee5322b1e58d890255d441f42dea98732597f"
+    },
+    "talking-head-production": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "c5cef70c59bde7451f008df2666234047b065763351b382f993a975e2456d3b8"
+    },
+    "technical-blog-writing": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "a3752a96c4c874827b5652c8e182030937f651fc6ef34d0a4497a8a69aa62605"
+    },
+    "template-skill": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "daf176f2cd0030d321982d3e813fd1a794a0b4744c5a92d2931a37001bb40fb9"
+    },
+    "text-to-speech": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "f8f4911070b3c3cd50d6bfea8c8f350246c6443620864ec4c5b202f502dfe2f0"
+    },
+    "theme-factory": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "e9ec1fe85faa729e9f3d1731cd7e4e485f98c099ccc7c1c0d198f473aa4b654a"
+    },
+    "tools-ui": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "2ffc2a0308ea205bc42a2a3db61910e6a4a859823c7aa0ef494518eb15896614"
+    },
+    "twitter-automation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "442c20e184eb01b58ee656b204197f5284b3e8eda28101d253290a4dcbc709c4"
+    },
+    "twitter-thread-creation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "429bcd548b54dc2183014e3140ff86701a8f4c9d02d9a7cc6f01a3a3e9889ba8"
+    },
+    "vercel-composition-patterns": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "575757e3e25761c8c562d6e395d29f0b76c98b1273c0bd72d88e6ab1bc9c7d42"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "ca7b0c0c6e5f2750043f7f0cd72d16ac4e2abc48f9b5500d047a4b77a2506212"
+    },
+    "vercel-react-view-transitions": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "c8952fc9127fa0564d0cb71dccb4215a5608ac933b5831104f09173a97a46f85"
+    },
+    "verify-pr-logs": {
+      "source": "rlespinasse/agent-skills",
+      "sourceType": "github",
+      "computedHash": "55c02103d16203797737131e0edf1c96cb8b71c04aebfd62425f6857d75a13c0"
+    },
+    "verify-readme-features": {
+      "source": "rlespinasse/agent-skills",
+      "sourceType": "github",
+      "computedHash": "2a6e6a4562402b0a4d95014295c58ceff99c001572fb864746eb6c1293b2ec71"
+    },
+    "video-ad-specs": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "034013f9e107d51fa0fb5e9b0935995b1aeb15b81ed6e8422b51cec8f1d49b4e"
+    },
+    "video-prompting-guide": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "d1150085dbfb41aee40f8b95871eba6e8c53816ac5ce4cc483e30df641c9324d"
+    },
+    "web-artifacts-builder": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "fdddbe9bb720ea1aea9292ee513ec10b2a8f4912e2c343bdc246ab3febd7c9b3"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "f3bc47f890f42a44db1007ab390709ec368e4b8c089baee6b0007182236ac474"
+    },
+    "web-search": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "ef45da79bbabdfcc87547f3e3d8df8129880056eae9db3a89d242327539eedae"
+    },
+    "web-to-markdown": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "673a5f2d7a2917b0cb4c9f54e8b130f56de336c1562349310555ca2b0f1e7d42"
+    },
+    "webapp-testing": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "3f14af7f5690695209c22fbf8c8d133769a86d64892602c09bb13f135e14e857"
+    },
+    "widgets-ui": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "38fb10fedd53b3f0981dddbaff25b1111ffeef4f772b60eb001890498c98c5a8"
+    },
+    "writing-clearly-and-concisely": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "computedHash": "8941c21d5127d6f7d87cefd9b5175b96c9e0dec0c20c663d68b9cb4331847d0a"
+    },
+    "xlsx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "cb7fba2177d0d35d14b3244272b25d1b05246e99b3468a087fe06c84193dbd20"
+    },
+    "youtube-thumbnail-design": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "4505485a6e01cca414f14d9c8080ca4832de20d9642650c8788ba1de447d73dd"
+    }
+  }
+}
