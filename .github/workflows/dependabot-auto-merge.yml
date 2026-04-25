@@ -17,8 +17,6 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
       
       - name: Enable auto-merge for Dependabot PRs
-        # Only auto-merge if it's a minor or patch update (prevents breaking changes)
-        if: steps.metadata.outputs.update-type != 'version-update:semver-major'
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
