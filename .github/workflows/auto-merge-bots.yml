@@ -16,7 +16,9 @@ jobs:
     if: |
       github.event_name == 'pull_request' && (
         github.event.pull_request.user.login == 'snyk-bot' ||
-        github.event.pull_request.user.login == 'sourcery-ai[bot]'
+        github.event.pull_request.user.login == 'sourcery-ai[bot]' ||
+        github.event.pull_request.user.login == 'deepsource-autofix[bot]' ||
+        github.event.pull_request.user.login == 'copilot-swe-agent[bot]'
       )
     steps:
       - name: Auto-merge bot PR
@@ -31,7 +33,7 @@ jobs:
     steps:
       - name: Merge open bot PRs
         run: |
-          for login in "snyk-bot" "sourcery-ai[bot]"; do
+          for login in "snyk-bot" "sourcery-ai[bot]" "deepsource-autofix[bot]" "copilot-swe-agent[bot]"; do
             gh pr list --author "$login" --state open --json number --jq '.[].number' \
             | while IFS= read -r pr; do
                 echo "Merging PR #$pr from $login"
