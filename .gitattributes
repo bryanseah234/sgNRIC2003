@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.md linguist-documentation=true
+skills/** linguist-generated=true
+docs/** linguist-generated=true
+templates/** linguist-generated=true
