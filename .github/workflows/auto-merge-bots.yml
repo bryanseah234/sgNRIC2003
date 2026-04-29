@@ -4,13 +4,14 @@ on:
     types: [opened, synchronize, reopened, ready_for_review]
   workflow_dispatch:
 
-permissions:
-  contents: write
-  pull-requests: write
+permissions: read-all
 
 jobs:
   auto-merge-on-open:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     if: |
       github.event_name == 'pull_request' && (
         github.event.pull_request.user.login == 'snyk-bot' ||
@@ -27,6 +28,9 @@ jobs:
 
   sweep-existing-bot-prs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     if: github.event_name == 'workflow_dispatch'
     steps:
       - name: Merge open bot PRs

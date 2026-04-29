@@ -7,9 +7,14 @@ on:
   pull_request:
     types: [opened]
 
+permissions: read-all
+
 jobs:
   greet:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
     steps:
       - uses: actions/first-interaction@302b15743b1c67d603a110303e8785edce498666 # v1.1.0
         with:
