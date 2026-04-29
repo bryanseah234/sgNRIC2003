@@ -30,7 +30,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Detect Node.js project
         id: detect
@@ -52,7 +52,7 @@ jobs:
 
       - name: Setup Node.js
         if: steps.detect.outputs.has_build == 'true'
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
           cache: ${{ steps.detect.outputs.pm }}
