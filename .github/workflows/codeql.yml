@@ -14,7 +14,7 @@ jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
-    continue-on-error: true
+    # continue-on-error removed — CodeQL failures should block merging
     permissions:
       security-events: write
       actions: read
