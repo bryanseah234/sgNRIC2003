@@ -9,9 +9,13 @@ on:
   schedule:
     - cron: "0 15 * * *" # Daily at 11 PM SGT (15:00 UTC)
 
+permissions: read-all
+
 jobs:
   trufflehog:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
