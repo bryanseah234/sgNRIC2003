@@ -27,6 +27,8 @@ jobs:
         with:
           path: ./
           extra_args: --only-verified
+          # fail is the default — explicitly set so it's clear this blocks merging
+          fail: true
 
       - name: Check for secrets
         if: failure()
