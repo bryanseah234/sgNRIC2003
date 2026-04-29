@@ -1,0 +1,88 @@
+name: Build Check
+
+on:
+  pull_request:
+    branches: [main, master]
+    paths:
+      # Only run when JS/TS source or dependency files change
+      - "**.ts"
+      - "**.tsx"
+      - "**.js"
+      - "**.jsx"
+      - "**.vue"
+      - "**.css"
+      - "**.scss"
+      - "package.json"
+      - "package-lock.json"
+      - "postcss.config.*"
+      - "tailwind.config.*"
+      - "vite.config.*"
+      - "tsconfig*.json"
+
+permissions: read-all
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Detect Node.js project
+        id: detect
+        run: |
+          if [ -f "package.json" ] && grep -q '"build"' package.json; then
+            echo "has_build=true" >> "$GITHUB_OUTPUT"
+            # Detect package manager
+            if [ -f "bun.lockb" ]; then
+              echo "pm=bun" >> "$GITHUB_OUTPUT"
+            elif [ -f "pnpm-lock.yaml" ]; then
+              echo "pm=pnpm" >> "$GITHUB_OUTPUT"
+            else
+              echo "pm=npm" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "has_build=false" >> "$GITHUB_OUTPUT"
+            echo "No build script found in package.json — skipping build check."
+          fi
+
+      - name: Setup Node.js
+        if: steps.detect.outputs.has_build == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: ${{ steps.detect.outputs.pm }}
+
+      - name: Install dependencies (npm)
+        if: steps.detect.outputs.has_build == 'true' && steps.detect.outputs.pm == 'npm'
+        # Use --legacy-peer-deps as a last resort only — if install fails cleanly
+        # first, that failure is intentional and should block the PR.
+        run: npm ci
+
+      - name: Install dependencies (pnpm)
+        if: steps.detect.outputs.has_build == 'true' && steps.detect.outputs.pm == 'pnpm'
+        run: |
+          npm install -g pnpm
+          pnpm install --frozen-lockfile
+
+      - name: Install dependencies (bun)
+        if: steps.detect.outputs.has_build == 'true' && steps.detect.outputs.pm == 'bun'
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Run build
+        if: steps.detect.outputs.has_build == 'true'
+        run: ${{ steps.detect.outputs.pm == 'npm' && 'npm run build' || format('{0} run build', steps.detect.outputs.pm) }}
+
+      - name: Build succeeded
+        if: steps.detect.outputs.has_build == 'true'
+        run: echo "✅ Build passed — safe to merge."
+
+      - name: No build script
+        if: steps.detect.outputs.has_build == 'false'
+        run: echo "ℹ️ No build script detected — skipping build check."

@@ -1,5 +1,11 @@
 name: Dependabot Auto-Merge
-on: pull_request
+on:
+  # Trigger when a status check completes on a PR — so we only merge
+  # after the build check has had a chance to run and pass.
+  pull_request:
+  workflow_run:
+    workflows: ["Build Check"]
+    types: [completed]
 
 permissions: read-all
 
@@ -9,10 +15,45 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    # Only run for Dependabot PRs
+    if: github.event.pull_request.user.login == 'dependabot[bot]' || (github.event_name == 'workflow_run' && github.event.workflow_run.actor.login == 'dependabot[bot]')
     steps:
-      - name: Auto-merge Dependabot PR
-        run: gh pr merge --admin --squash "$PR_URL"
+      - name: Get PR number from workflow_run
+        id: get-pr
+        if: github.event_name == 'workflow_run'
+        run: |
+          PR_NUMBER=$(gh api "repos/${{ github.repository }}/pulls" \
+            --jq ".[] | select(.head.sha == \"${{ github.event.workflow_run.head_sha }}\") | .number" \
+            | head -1)
+          echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+          echo "pr_url=https://github.com/${{ github.repository }}/pull/$PR_NUMBER" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Check build status before merging
+        id: check-build
+        if: github.event_name == 'workflow_run'
+        run: |
+          if [ "${{ github.event.workflow_run.conclusion }}" != "success" ]; then
+            echo "Build check did not pass (conclusion: ${{ github.event.workflow_run.conclusion }}). Skipping auto-merge."
+            echo "build_ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "build_ok=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Auto-merge Dependabot PR (on pull_request event)
+        if: github.event_name == 'pull_request'
+        run: |
+          # On pull_request open, just enable auto-merge — the merge will
+          # only complete once all required status checks pass (including Build Check).
+          gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Auto-merge Dependabot PR (after build passes)
+        if: github.event_name == 'workflow_run' && steps.check-build.outputs.build_ok == 'true' && steps.get-pr.outputs.pr_url != ''
+        run: gh pr merge --admin --squash "$PR_URL"
+        env:
+          PR_URL: ${{ steps.get-pr.outputs.pr_url }}
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
