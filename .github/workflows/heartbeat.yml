@@ -1,0 +1,23 @@
+name: Heartbeat
+
+on:
+  schedule:
+    - cron: "0 9 * * 1" # Weekly Monday 5pm SGT
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Heartbeat commit (keeps cron alive)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          echo "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > last_sync.txt
+          git add last_sync.txt
+          git diff --cached --quiet || git commit -m "chore: sync heartbeat [skip ci]"
+          git push
