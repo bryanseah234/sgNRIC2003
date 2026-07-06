@@ -1,9 +1,19 @@
 name: Heartbeat
 
+# COST-OPTIMISED (2026-07-04):
+# - concurrency prevents overlapping runs.
+# - Commit uses [skip ci] so downstream CI/CodeQL/Scorecard don't fan out.
+# - Purpose: keep the weekly cron alive (GitHub disables schedules after 60 days
+#   of no repo activity). One tiny commit per week per repo is the intended cost.
+
 on:
   schedule:
     - cron: "0 9 * * 1" # Weekly Monday 5pm SGT
   workflow_dispatch:
+
+concurrency:
+  group: heartbeat-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -20,4 +30,6 @@ jobs:
           echo "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > last_sync.txt
           git add last_sync.txt
           git diff --cached --quiet || git commit -m "chore: sync heartbeat [skip ci]"
+          # Rebase before push in case another workflow raced us.
+          git pull --rebase || true
           git push

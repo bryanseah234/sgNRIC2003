@@ -1,5 +1,8 @@
 name: Build Check
 
+# COST-OPTIMISED (2026-07-04):
+# - concurrency: cancel-in-progress so a new commit cancels the previous PR build.
+# - Existing paths filter kept (already skips markdown-only edits).
 on:
   pull_request:
     branches: [main, master]
@@ -14,10 +17,16 @@ on:
       - "**.scss"
       - "package.json"
       - "package-lock.json"
+      - "pnpm-lock.yaml"
+      - "bun.lockb"
       - "postcss.config.*"
       - "tailwind.config.*"
       - "vite.config.*"
       - "tsconfig*.json"
+
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions: read-all
 
@@ -52,7 +61,7 @@ jobs:
 
       - name: Setup Node.js
         if: steps.detect.outputs.has_build == 'true'
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
           cache: ${{ steps.detect.outputs.pm }}
