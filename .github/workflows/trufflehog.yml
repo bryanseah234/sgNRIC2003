@@ -1,11 +1,19 @@
 # .github/workflows/trufflehog.yml
 name: TruffleHog Secret Scan
 
+# COST-OPTIMISED (2026-07-04):
+# - concurrency cancels superseded runs.
+# - PRs use diff-only scan (base..head) rather than full history — dramatically faster.
+# - Push: still scans; but concurrency will cancel the older run.
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "master"]
   pull_request:
-    branches: ["main"]
+    branches: ["main", "master"]
+
+concurrency:
+  group: trufflehog-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions: read-all
 
@@ -16,16 +24,18 @@ jobs:
       contents: read
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: TruffleHog OSS
-        uses: trufflesecurity/trufflehog@v3.95.8
+        uses: trufflesecurity/trufflehog@v3.95.2
         with:
           path: ./
+          # Explicit base/head keeps PR runs limited to changed commits.
+          base: ${{ github.event.pull_request.base.sha || github.event.before || '' }}
+          head: ${{ github.event.pull_request.head.sha || github.sha }}
           extra_args: --only-verified
-          # fail is the default — explicitly set so it's clear this blocks merging
           fail: true
 
       - name: Check for secrets
