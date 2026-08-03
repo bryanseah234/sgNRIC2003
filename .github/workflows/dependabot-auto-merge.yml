@@ -46,14 +46,21 @@ jobs:
         run: |
           # On pull_request open, just enable auto-merge — the merge will
           # only complete once all required status checks pass (including Build Check).
-          gh pr merge --auto --squash "$PR_URL"
+          gh pr merge --auto --squash "$PR_URL" || {
+            echo "Auto-merge could not be enabled yet; leaving PR open for checks/review."
+            exit 0
+          }
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Auto-merge Dependabot PR (after build passes)
         if: github.event_name == 'workflow_run' && steps.check-build.outputs.build_ok == 'true' && steps.get-pr.outputs.pr_url != ''
-        run: gh pr merge --admin --squash "$PR_URL"
+        run: |
+          gh pr merge --admin --squash "$PR_URL" || {
+            echo "Auto-merge failed; leaving PR open for manual triage."
+            exit 0
+          }
         env:
           PR_URL: ${{ steps.get-pr.outputs.pr_url }}
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}

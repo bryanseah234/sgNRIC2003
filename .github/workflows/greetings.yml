@@ -12,11 +12,12 @@ permissions: read-all
 jobs:
   greet:
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'dependabot[bot]'
     permissions:
       issues: write
       pull-requests: write
     steps:
-      - uses: actions/first-interaction@302b15743b1c67d603a110303e8785edce498666 # v1.1.0
+      - uses: actions/first-interaction@v3.1.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           # The action automatically looks for .github/greetings.yml

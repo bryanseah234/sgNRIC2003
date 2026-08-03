@@ -12,11 +12,12 @@ permissions: read-all
 jobs:
   label:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login != 'dependabot[bot]'
     permissions:
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/labeler@ac65c9bad2b9bb4c1bc3b2907bb1099c5ed90f13 # v2.0.0
+      - uses: actions/labeler@v6
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           # The action automatically looks for .github/labels.yml by default
