@@ -35,7 +35,7 @@ jobs:
 
       - name: TruffleHog OSS
         if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'dependabot[bot]'
-        uses: trufflesecurity/trufflehog@v3.95.2
+        uses: trufflesecurity/trufflehog@v3.96.0
         with:
           path: ./
           # Explicit base/head keeps PR runs limited to changed commits.
