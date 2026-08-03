@@ -3,3 +3,28 @@
 skills/** linguist-generated=true
 docs/** linguist-generated=true
 templates/** linguist-generated=true
+
+# LFS ACCIDENT PREVENTION (2026-07-07):
+# Explicitly disable Git LFS filters on these patterns so nothing gets
+# auto-captured into LFS. Previous accidents cost 11.6 GB of LFS quota
+# on the pokemoncards repo. If you legitimately need LFS for a specific
+# file type in a specific repo, override in that repo's .gitattributes.
+*.png    -filter -diff -merge
+*.jpg    -filter -diff -merge
+*.jpeg   -filter -diff -merge
+*.webp   -filter -diff -merge
+*.gif    -filter -diff -merge
+*.svg    -filter -diff -merge
+*.ico    -filter -diff -merge
+*.log    -filter -diff -merge
+*.tmp    -filter -diff -merge
+*.zip    -filter -diff -merge
+*.tar    -filter -diff -merge
+*.tar.gz -filter -diff -merge
+*.tgz    -filter -diff -merge
+*.7z     -filter -diff -merge
+*.mp4    -filter -diff -merge
+*.mov    -filter -diff -merge
+*.pdf    -filter -diff -merge
+*.psd    -filter -diff -merge
+*.txt    -filter -diff -merge
