@@ -1,15 +1,32 @@
 # .github/workflows/trufflehog.yml
 name: TruffleHog Secret Scan
 
-# COST-OPTIMISED (2026-07-04):
+# COST-OPTIMISED (2026-07-04, 2026-08-04):
 # - concurrency cancels superseded runs.
-# - PRs use diff-only scan (base..head) rather than full history — dramatically faster.
-# - Push: still scans; but concurrency will cancel the older run.
+# - paths-ignore skips scans on docs / markdown / license-only changes.
+# - PRs use shallow (fetch-depth: 2) checkout since we only diff base..head.
+# - Push: still uses fetch-depth: 0 for full-history scan on default branch.
 on:
   push:
     branches: ["main", "master"]
+    paths-ignore:
+      - "**.md"
+      - "docs/**"
+      - "LICENSE"
+      - "**/LICENSE"
+      - ".gitignore"
+      - ".gitattributes"
+      - ".editorconfig"
   pull_request:
     branches: ["main", "master"]
+    paths-ignore:
+      - "**.md"
+      - "docs/**"
+      - "LICENSE"
+      - "**/LICENSE"
+      - ".gitignore"
+      - ".gitattributes"
+      - ".editorconfig"
 
 concurrency:
   group: trufflehog-${{ github.workflow }}-${{ github.ref }}
@@ -31,7 +48,9 @@ jobs:
         if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'dependabot[bot]'
         uses: actions/checkout@v7
         with:
-          fetch-depth: 0
+          # PR runs only need base..head diff, so a depth of 2 is enough.
+          # Push runs still need full history to scan the whole default branch.
+          fetch-depth: ${{ github.event_name == 'pull_request' && 2 || 0 }}
 
       - name: TruffleHog OSS
         if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'dependabot[bot]'
