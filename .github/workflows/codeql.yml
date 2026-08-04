@@ -52,7 +52,13 @@ permissions: read-all
 jobs:
   # Auto-detect languages present in the repo so we don't spin up a matrix leg
   # for a language the repo doesn't use (was previously always JS+Py = 2 legs).
+  #
+  # COST FIX (2026-08-04): job-level `if` skips the runner boot entirely on
+  # private repos. The previous shell-level check still spun up a runner and
+  # did a full checkout (~30-60s each) before exiting — ~100 wasted min/week
+  # on push-heavy private repos like unifiedcollector.
   detect:
+    if: github.event.repository.private == false
     runs-on: ubuntu-latest
     outputs:
       languages: ${{ steps.langs.outputs.languages }}
@@ -64,12 +70,6 @@ jobs:
         shell: bash
         run: |
           set -e
-          if [ "${{ github.event.repository.private }}" = "true" ]; then
-            echo "Private repository without guaranteed code scanning/GHAS support; skipping CodeQL."
-            echo "languages=[]" >> "$GITHUB_OUTPUT"
-            echo "any=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
           langs=()
           if find . -type f \( -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.jsx" -o -name "*.mjs" -o -name "*.cjs" -o -name "*.vue" \) \
               -not -path "./node_modules/*" -not -path "./.git/*" -print -quit | grep -q .; then
@@ -91,7 +91,7 @@ jobs:
 
   analyze:
     needs: detect
-    if: needs.detect.outputs.any == 'true'
+    if: needs.detect.result == 'success' && needs.detect.outputs.any == 'true'
     name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
     permissions:
