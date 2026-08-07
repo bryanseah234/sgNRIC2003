@@ -2,7 +2,7 @@
 code to generate barcodes for NRICs in 2003.
 
 <p align="center">
-  <img src="https://github.com/bryanseah234/sgNRIC2003/blob/master/archive/nric2003.JPG" />
+  <img src="https://github.com/hongyime/sgNRIC2003/blob/master/archive/nric2003.JPG" />
 </p>
 
 ## Disclaimer
