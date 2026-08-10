@@ -37,7 +37,7 @@ jobs:
     # Skip Dependabot noise; also skip if no Python at all (guarded by find below)
     if: (github.actor != 'dependabot[bot]')
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - name: Detect Python source
         id: detect
