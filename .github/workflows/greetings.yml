@@ -19,5 +19,14 @@ jobs:
     steps:
       - uses: actions/first-interaction@v3.1.0
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          # The action automatically looks for .github/greetings.yml
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          issue_message: |
+            Welcome, @${{ github.actor }}.
+
+            Thanks for opening your first issue in this repository. A maintainer
+            will review it when available.
+          pr_message: |
+            Welcome, @${{ github.actor }}.
+
+            Thanks for opening your first pull request in this repository. A
+            maintainer will review it when available.

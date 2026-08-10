@@ -6,6 +6,41 @@ description: Central configuration and documentation for all AI coding agents ac
 
 This file defines how AI coding agents (Cursor, Antigravity, Claude Code, GitHub Copilot, etc.) should behave across all repositories in this workspace.
 
+## Cross-Session State (Read This First)
+
+Before doing anything else, read `.agents/STATE.md` if it exists. It is the
+handover from whoever worked here last, possibly from a different tool or
+machine.
+
+This workspace is worked on by multiple agents: Gemini CLI, Antigravity, Mistral
+CLI, Kiro, Codex, Pi, Hermes, opencode, Claude Code, Cursor, and others. Sessions
+can end abruptly when a free-tier limit is hit. No harness can read every other
+harness's private session store, so durable state lives in plain files that all
+of them can read.
+
+The state directory is:
+
+```text
+.agents/
+  STATE.md      current task, progress, next steps
+  JOURNAL.md    append-only decisions and rationale
+  handoffs/     detailed handoff documents
+```
+
+`.agents/` is committed deliberately so state reaches the other machines. Never
+write secrets or personal details there. These files are permanent and
+world-readable in public repositories.
+
+Your obligations:
+
+1. On start, read `.agents/STATE.md` if it exists.
+2. As you work, update `.agents/STATE.md` after each meaningful step.
+3. For durable decisions, append one dated line to `.agents/JOURNAL.md`.
+4. Before a long or risky stretch, write a handoff in `.agents/handoffs/`.
+
+Memory tools such as cognee or cavemem are optional local aids. Trust
+`.agents/STATE.md` and `git log` over an empty memory-tool result.
+
 ## Agent Types and Roles
 
 ### 1. Primary Coding Agent (Cursor/Claude Code)
@@ -62,20 +97,19 @@ This file defines how AI coding agents (Cursor, Antigravity, Claude Code, GitHub
 
 ## Skill System
 
-Skills 是由 `npx skills` 工具安装的 Agent Skills，用于向 Agent 传授特定模式的指令。在 sourcerepo 中以 project-level 方式安装，并同步到所有项目仓库。
+Do not assume project-level skills are present in target repositories. The
+current sync intentionally removes `skills/`, `skills-lock.json`, and `docs/`
+from target repos, and `.claude/` remains local-only because it can contain
+session databases and credentials.
 
-### 安装来源
+If a harness has local skills installed, it may use them, but shared repo
+instructions must live in `AGENTS.md` and shared handoff state must live under
+`.agents/`.
 
-Skills 通过 `npx skills add` 从公开仓库安装，支持 Claude Code、Cursor、Cline、Codex、GitHub Copilot、Gemini CLI 等多个 Agent。完整清单与命令参见仓库中的 [`docs/skills-manifest.md`](<kfile name="skills-manifest.md" path="docs/skills-manifest.md">docs/skills-manifest.md</kfile>)。
+### MCP Configuration
 
-### 项目级 Skills 目录
-
-- `.agents/skills/`：通用 project-level skills（适合 Cursor/Cline/Codex/GitHub Copilot/OpenCode 等广泛兼容）
-- `.claude/skills/`：Claude Code 专属项目级目录
-
-### MCP 配置
-
-MCP（Model Context Protocol）配置模板与支持策略见 [`docs/mcp-support-matrix.md`](<kfile name="mcp-support-matrix.md" path="docs/mcp-support-matrix.md">docs/mcp-support-matrix.md</kfile>)。当前阶段以文档与模板传播为主，不承诺所有 IDE/Agent 自动读取同一文件。
+MCP support varies by harness. Use local MCP configuration if present, but do
+not assume one shared MCP config is read by every agent.
 
 ## Syncing Strategy
 
@@ -84,12 +118,10 @@ MCP（Model Context Protocol）配置模板与支持策略见 [`docs/mcp-support
 - **Secondary**: 目标仓库保留仓库特定覆盖（需在 sync 后自行维护）
 
 ### Sync Workflows
-- **Skills 同步**：[`sync-skills.yml`](<kfile name="sync-skills.yml" path=".github/workflows/sync-skills.yml">.github/workflows/sync-skills.yml</kfile>) 负责传播 `.agents/skills/`、`.claude/skills/` 和 `docs/skills-manifest.md`
-- **MCP 同步**：[`sync-mcp.yml`](<kfile name="sync-mcp.yml" path=".github/workflows/sync-mcp.yml">.github/workflows/sync-mcp.yml</kfile>) 负责传播 MCP 模板与支持文档
 - **仓库设置与通用配置**：[`sync-repo-settings.yml`](<kfile name="sync-repo-settings.yml" path=".github/workflows/sync-repo-settings.yml">.github/workflows/sync-repo-settings.yml</kfile>) 负责传播 GitHub Actions、Dependabot、labels、`AGENTS.md` 等
 
 ### Sync Process
-1. 在 sourcerepo 中修改 Skills、MCP 或通用配置
+1. 在 sourcerepo 中修改通用配置
 2. 推送到 `main` 分支自动触发相应 workflow
 3. workflow 会遍历所有非 archive/fork 仓库，复制变更并提交/开 PR
 4. 定时任务每日/每日执行，覆盖未来新仓库
@@ -98,7 +130,7 @@ MCP（Model Context Protocol）配置模板与支持策略见 [`docs/mcp-support
 当创建新仓库时：
 1. 将 sourcerepo 中的配置同步过去（由定时任务或手动触发完成）
 2. 如需仓库特定覆盖，同步后手动维护
-3. Skills 已通过同步自动到位，无需手动安装
+3. Read `AGENTS.md`, then read `.agents/STATE.md` if present
 
 ## Maintenance
 
@@ -117,7 +149,7 @@ MCP（Model Context Protocol）配置模板与支持策略见 [`docs/mcp-support
 
 ### Agent Not Following Conventions
 1. 检查仓库特定覆盖在 AGENTS.md 中
-2. 验证 `.agents/skills/` 与 `.claude/skills/` 中的 skills 文件存在且最新
+2. 检查 `.agents/STATE.md` 中是否有最新任务上下文
 3. 审阅近期约定变更
 4. 从源重新同步配置
 

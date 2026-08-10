@@ -1,15 +1,15 @@
 # .github/FUNDING.yml
-# These are supported funding model platforms
+# Funding is intentionally empty unless a repo has an organisation-level account.
 
-github: theprawnorganisation  # Your GitHub Sponsors username
-# patreon: # Your Patreon username
-# open_collective: # Your Open Collective username
-# ko_fi: # Your Ko-fi username
-# tidelift: # npm/package-name or pypi/package-name etc
-# community_bridge: # Project name on Community Bridge
-# liberapay: # Your Liberapay username
-# issuehunt: # Your IssueHunt username
-# lfx_crowdfunding: # Your LFX Crowdfunding project name
-# polar: # Your Polar username
-# buy_me_a_coffee: # Your Buy Me a Coffee username
-# custom: ["https://your-custom-link.com"]  # Up to 4 custom links
+github: []
+patreon: []
+open_collective: []
+ko_fi: []
+tidelift: []
+community_bridge: []
+liberapay: []
+issuehunt: []
+lfx_crowdfunding: []
+polar: []
+buy_me_a_coffee: []
+custom: []

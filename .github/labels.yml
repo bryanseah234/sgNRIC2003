@@ -1,28 +1,35 @@
-# .github/labels.yml
-# Example configuration for the labeler action
-
 documentation:
-  - 'docs/**/*'
-  - '*.md'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'docs/**/*'
+          - '*.md'
 
 backend:
-  - 'src/server/**/*'
-  - 'backend/**/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/server/**/*'
+          - 'backend/**/*'
 
 frontend:
-  - 'src/client/**/*'
-  - 'frontend/**/*'
-  - 'ui/**/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/client/**/*'
+          - 'frontend/**/*'
+          - 'ui/**/*'
 
 tests:
-  - '**/__tests__/**/*'
-  - 'tests/**/*'
-  - 'spec/**/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/__tests__/**/*'
+          - 'tests/**/*'
+          - 'spec/**/*'
 
 bug:
-  - 'fix/*'
-  - 'bug/*'
+  - head-branch:
+      - '^fix/'
+      - '^bug/'
 
 enhancement:
-  - 'feat/*'
-  - 'feature/*'
+  - head-branch:
+      - '^feat/'
+      - '^feature/'
