@@ -2,7 +2,7 @@
 code to generate barcodes for NRICs in 2003.
 
 <p align="center">
-  <img src="https://github.com/bryanseah234/sgNRIC2003/blob/master/archive/nric2003.JPG" />
+  <img src="https://github.com/theprawnorganisation/sgNRIC2003/blob/master/archive/nric2003.JPG" />
 </p>
 
 ## Disclaimer
@@ -72,3 +72,7 @@ The number is randomly generated. However to make it valid, the random numbers a
 
 ### Is this legal?
 The generation of NRIC numbers itself is legal, as the algorithm is made public. This page serves to demonstrate that it is possible to do so. However, you should not use the NRIC numbers to impersonate anyone as it is an offence. By using this page to generate/copy NRIC/FIN numbers, you hereby agree to be responsible for your actions for use of the numbers, and waive all your rights to hold me liable to any problems arising from your actions.
+
+## License
+
+Apache-2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).

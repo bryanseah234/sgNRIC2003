@@ -24,3 +24,11 @@
 !.env.sample
 !.sourcery.yml
 !.deepsource.toml
+.env
+.env.*
+node_modules/
+dist/
+build/
+.next/
+__pycache__/
+.pytest_cache/
