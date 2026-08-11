@@ -1,4 +1,9 @@
 # Singapore NRIC 2003
+
+Live demo: https://hongyime.github.io/sgNRIC2003/
+
+![Project screenshot](./screenshot.png)
+
 code to generate barcodes for NRICs in 2003.
 
 <p align="center">
