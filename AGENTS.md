@@ -31,12 +31,22 @@ The state directory is:
 write secrets or personal details there. These files are permanent and
 world-readable in public repositories.
 
+Treat `.agents/` as shared project state, not personal scratch space. In team
+repos, write only what another teammate or agent needs to resume the work:
+current task, decisions, blockers, linked issues or PRs, and safe next steps.
+Do not write private notes, credentials, customer data, local machine paths that
+should stay private, or anything that would be unsafe in a public repository.
+
 Your obligations:
 
 1. On start, read `.agents/STATE.md` if it exists.
 2. As you work, update `.agents/STATE.md` after each meaningful step.
 3. For durable decisions, append one dated line to `.agents/JOURNAL.md`.
 4. Before a long or risky stretch, write a handoff in `.agents/handoffs/`.
+
+Keep `STATE.md` short and current. Put durable decisions in `JOURNAL.md`. Put
+detailed resume notes in timestamped files under `.agents/handoffs/` so multiple
+people do not overwrite one another.
 
 Memory tools such as cognee or cavemem are optional local aids. Trust
 `.agents/STATE.md` and `git log` over an empty memory-tool result.
