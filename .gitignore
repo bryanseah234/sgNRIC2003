@@ -1,7 +1,14 @@
 
+
 # AI / editor dot directories (managed via sourcerepo)
 .*
 !.github/
+!.agents/
+.agents/*
+!.agents/STATE.md
+!.agents/JOURNAL.md
+!.agents/handoffs/
+!.agents/handoffs/**
 !.gitignore
 !.gitattributes
 !.gitmodules
@@ -24,11 +31,7 @@
 !.env.sample
 !.sourcery.yml
 !.deepsource.toml
-.env
-.env.*
-node_modules/
-dist/
-build/
-.next/
-__pycache__/
-.pytest_cache/
+skills/
+skills-lock.json
+docs/
+# End AI / editor dot directories (managed via sourcerepo)
